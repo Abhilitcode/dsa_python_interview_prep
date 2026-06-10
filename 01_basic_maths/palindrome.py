@@ -24,3 +24,8 @@ if __name__ == "__main__":
     print(obj.isPalindrome(1331))
     print(obj.isPalindrome(123))
     print(obj.isPalindrome(0))
+
+    #appraoch 2 slicing appraoch space-: o(n) time-: o(n)
+        #if x<0:
+        #     return False
+        #return str(x) == str(x)[::-1])
