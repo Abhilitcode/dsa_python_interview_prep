@@ -1,0 +1,41 @@
+#recurssion appraoch to check if a string is a palindrome or not
+
+# def reverse_string(str, left, right):
+
+#     #base condition
+
+#     if left >= right:
+#         return True 
+    
+#     if str[left] != str[right]:
+#         return False
+    
+#     return reverse_string(str, left+1, right-1)
+
+# if __name__ == "__main__":
+#     str = input("Enter the string:")
+#     print(reverse_string(str, 0, len(str)-1))
+#     #     print(f"{str} is a palindrome")
+#     # else:
+#     #     print(f"{str} is not a palindrome")
+
+#TWO POINTER APPROACH
+def reverse_string(str):
+    left = 0
+    right = len(str)-1 
+
+    while left < right:
+        if str[left] != str[right]:
+            return False
+        
+        left +=1 
+        right -=1
+    
+    return True 
+
+if __name__ == "__main__":
+    str = input("Enter the string:")
+    if (reverse_string(str)):
+        print(f"{str} is a palindrome")
+    else:
+        print(f"{str} is not a palindrome")
