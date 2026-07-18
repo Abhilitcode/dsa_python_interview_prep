@@ -4,17 +4,20 @@
 
 class Solution:
     def getDivisors(self,n):
-        factors = []
-        i = 1
-        while i*i<=n:
-            if n%i==0:
-                factors.append(i)
+        factors_list = []
+        i =1
+        while i*i <=n:
+            if n%i ==0:
+                factors_list.append(i)
+
                 if i!= n//i:
-                    factors.append(n//i)
+                    factors_list.append(n//i)
             
-            i+=1
+            i+=1 
         
-        return sorted(factors)
+        return sorted(factors_list)
+
+
 if __name__ == "__main__":
     obj = Solution()
     print(obj.getDivisors(12))

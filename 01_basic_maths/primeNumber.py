@@ -4,16 +4,15 @@
 class Solution:
     def isPrime(self,n):
         if n<=1:
-            return False
+            return False 
         
-        i=2
-        while i*i <=n:
-            if n%i ==0:
+        i =2
+        while i*i<=n:
+            if n%i==0:
                 return False
-            
-            i+=1 
+            i+=1
         
-        return True 
+        return True
     
 if __name__ == "__main__":
     obj = Solution()

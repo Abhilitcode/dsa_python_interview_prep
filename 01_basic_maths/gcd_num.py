@@ -1,16 +1,16 @@
 #Appraoch 2 . implement euclidean algorithm space-: o(1) time-: o(logn)
+#gcd of smallest and largest number -> finding. not the entire array list
 
-from ast import List
+from typing import List
 class Solution:
     def findGCD(self, nums: List[int]) -> int:
-        small_num = min(nums)
-        large_num = max(nums)
+        min_num = min(nums)
+        max_num = max(nums)
 
-        while small_num!=0:
-            small_num, large_num = large_num%small_num, small_num 
-        
-        return large_num 
+        while min_num != 0:
+            min_num, max_num = max_num % min_num, min_num
 
+        return max_num
 
 #appraoch 1 math appraoch space-: o(1) time-: o(n+n+logn) => 
 # o(n) since o(n) is the dominant term.

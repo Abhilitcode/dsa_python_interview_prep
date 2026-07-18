@@ -5,16 +5,19 @@
 
 class Solution:
     def armstrongNumber (self, n):
-        original_num = n 
-        digits = len(str(n))
+        og_num = n
+        num_digits = len(str(n)) 
+
         total = 0
 
         while n>0:
-            digit = n%10
-            total += digit ** digits
-            n = n//10
+
+            digit = n%10  #last digit of the num 
+            total += digit ** num_digits
+            n = n//10 #reducing the number one by one 
         
-        return total == original_num 
+        return total == og_num 
+
     
 if __name__ == "__main__":
     obj = Solution()
