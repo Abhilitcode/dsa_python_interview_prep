@@ -2,6 +2,7 @@
 # // --> quotient without decimal, %--> remainder
 # % 10  → GET the last digit 
 # // 10 → REMOVE the last digit
+# scroll down for understanding why while x>reverse is taken
 
 class Solution:
     def isPalindrome(self, x: int) -> bool:
@@ -35,3 +36,32 @@ if __name__ == "__main__":
         #if x<0:
         #     return False
         #return str(x) == str(x)[::-1]
+
+# We use while x > reverse: as the condition because it allows us to process only half of the number, which makes the algorithm significantly faster and avoids integer overflow issues.
+
+# Here is why this logic works:
+
+# 1. Stopping at the Midpoint
+# When you reverse a number digit by digit, x decreases while reverse increases. The moment reverse becomes greater than or equal to x, you have reached or passed the middle of the number.
+
+# For an even-length palindrome (e.g., 1221):
+
+# Start: x = 1221, reverse = 0
+
+# Step 1: x = 122, reverse = 1 (122 > 1 → continue)
+
+# Step 2: x = 12, reverse = 12 (12 > 12 is False → STOP)
+
+# Result: x == reverse (12 == 12), so it's a palindrome.
+
+# For an odd-length palindrome (e.g., 12321):
+
+# Start: x = 12321, reverse = 0
+
+# Step 1: x = 1232, reverse = 1 (1232 > 1 → continue)
+
+# Step 2: x = 123, reverse = 12 (123 > 12 → continue)
+
+# Step 3: x = 12, reverse = 123 (12 > 123 is False → STOP)
+
+# Result: Discard the middle digit (reverse // 10 gives 12). Since x == reverse // 10 (12 == 12), it's a palindrome.
