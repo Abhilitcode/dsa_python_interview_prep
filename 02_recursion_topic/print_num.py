@@ -1,3 +1,5 @@
+#pre-order printing
+
 # def print_nums(n):
 
 #     if n==0:
@@ -10,7 +12,8 @@
 # if __name__ == "__main__":
 #     print_nums(5)
 
-#same thing but now in backtracting way 
+#same thing but post order or unwinding. 
+#refer to 1st docs to understand unwinding.
 
 def print_nums(n):
 

@@ -13,8 +13,7 @@
 # if __name__ == "__main__":
 #     print_name(5)
 
-#backtracking means print after the recursive call 
-
+#post and pre order printing.
 def print_name(n):
 
     if n==0:
