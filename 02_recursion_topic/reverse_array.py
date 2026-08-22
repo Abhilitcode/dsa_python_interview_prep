@@ -1,5 +1,30 @@
-#usingd recurssion to reverse an array
+#using recurssion to reverse an array
+#A base case in recursion should be an if statement, not a while loop.
 
+# Step-by-Step Breakdown
+# Suppose the user types: 10 20 30 40 into the terminal.
+
+# 1. input()
+# What it does: Reads whatever the user types as a single string.
+
+# Result: "10 20 30 40"
+
+# 2. .split()
+# What it does: Splits the string by spaces into a list of string pieces.
+
+# Result: ['10', '20', '30', '40'] (Notice these are still text strings with quotes!)
+
+# 3. map(int, ...)
+# What it does: Applies the function int() to every item in that list to convert each string into a real integer number.
+
+# Result: A map object holding 10, 20, 30, 40 as real numbers.
+
+# 4. list(...)
+# What it does: Converts that map object into a standard Python list.
+
+# Result: [10, 20, 30, 40]
+
+# MAIN RECURSSION APPRAOCH 
 # def reverse_array(arr, left, right):
 #     if left >= right:
 #         return 
