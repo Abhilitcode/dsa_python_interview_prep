@@ -24,7 +24,6 @@ if __name__ == "__main__":
     n = int(input("Enter a number:"))
     print(obj.fibonnacci(n))
 
-#using backtracking
 
 # class Solution:
 #     def fibonnacci(self, n):
