@@ -28,7 +28,7 @@ class Solution:
     def isPalindrome(self, s: str) -> bool:
         #space --> o(1)
         left = 0
-        right = len(s)-1 
+        right = s.__len__() - 1
 
         while left < right:
             #this is for not alphanumeric and then skip those char n move
