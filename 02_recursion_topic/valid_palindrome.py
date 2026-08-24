@@ -25,10 +25,10 @@
 
 #Two pointer appraoch --> space o(1)
 class Solution:
-    def isPalindrome(self, s: str) -> bool:
+    def isPalindrome(self, s):
         #space --> o(1)
         left = 0
-        right = s.__len__() - 1
+        right = len(s)-1 
 
         while left < right:
             #this is for not alphanumeric and then skip those char n move
