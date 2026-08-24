@@ -21,4 +21,4 @@ class Solution:
 
 if __name__ == "__main__":
     obj = Solution()
-    print(obj.count_elements(nums=[1,2,2,1,3,3,4]))
+    print(obj.count_elements(nums=[1,2,2,2,1,3,3,4]))
