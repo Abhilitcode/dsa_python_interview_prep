@@ -1,4 +1,4 @@
-#highest character frequency 
+# 1st highest character frequency 
 #O(n), o(n)
 
 class Solution:
@@ -23,4 +23,4 @@ class Solution:
 if __name__ == "__main__":
     obj = Solution()
     print(obj.max_freq(s="radheshammm"))
-    print(obj.max_freq(s="lifeisunfair"))
+    print(obj.max_freq(s="liffeisunfair"))

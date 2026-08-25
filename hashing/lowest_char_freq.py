@@ -1,4 +1,4 @@
-#find minimum character frequency. 
+#find 1st minimum character frequency. 
 
 class Solution:
     def low_freq(self, s):
@@ -25,3 +25,4 @@ if __name__ == "__main__":
     obj = Solution()
     print(obj.low_freq(s="radhesham"))
     print(obj.low_freq(s="lifeisunfair"))
+    print(obj.low_freq(s="abhishek"))
