@@ -1,4 +1,4 @@
-#3rd appraoch single pass
+#3rd appraoch single pass o(n)
 def second_largest(arr):
     largest = arr[0]
     second_large = float("-inf")
@@ -16,11 +16,6 @@ def second_largest(arr):
 arr = list(map(int,input("enter the array:").split()))
 obj = second_largest(arr)
 print(obj)
-
-
-
-
-
 
 
 
