@@ -4,7 +4,7 @@
 #optimal appraoch --> o(n), O(n)
 from typing import List
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    def twoSum(self, nums, target):
         hashmap = {}
         for i in range(len(nums)):
             complement = target - nums[i]
