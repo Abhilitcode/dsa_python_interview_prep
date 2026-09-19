@@ -83,3 +83,15 @@ def is_palindrome(s, left, right):
 ```
 
 ---
+How It Worksfreq: A standard Python dictionary used to store items as keys and their counts as 
+values.freq.get(num, 0): 
+
+This is the safest way to look up a key. The .get() method looks for num in the dictionary. 
+If num exists, it returns its current count. 
+If num is not in the dictionary yet, instead of throwing a KeyError, it returns the default value: 0.+ 1: Increments the retrieved count by 1.freq[num] = ...: Saves the updated count back into the dictionary.
+
+Step-by-Step ExampleIf you are iterating through a list [5, 5, 2] using a loop like for num in nums::Step
+
+Current numfreq.get(num, 0) evaluates to...Resulting state of freq dictionary15 (First time seen)0 (Key doesn't exist yet, returns default 0 + 1){5: 1}
+--> 5 (Seen again)1 (Key exists, returns current value 1 + 1){5: 2}32 (First time seen)0 (Key doesn't exist yet, returns default 0 + 1)
+{5: 2, 2: 1}
