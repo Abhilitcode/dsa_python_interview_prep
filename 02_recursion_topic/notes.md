@@ -95,3 +95,139 @@ Step-by-Step ExampleIf you are iterating through a list [5, 5, 2] using a loop l
 Current numfreq.get(num, 0) evaluates to...Resulting state of freq dictionary15 (First time seen)0 (Key doesn't exist yet, returns default 0 + 1){5: 1}
 --> 5 (Seen again)1 (Key exists, returns current value 1 + 1){5: 2}32 (First time seen)0 (Key doesn't exist yet, returns default 0 + 1)
 {5: 2, 2: 1}
+
+---------------------------------------------------------------------------------------------
+DUTCH NATIONAL FLAG ALGORITHM WHY WE ARE USING IT.
+
+Yes. The **main reason we use the Dutch National Flag algorithm** is:
+
+> We want to sort `0, 1, 2` in **O(n) time and O(1) extra space**, without using a normal sorting algorithm.
+
+But let's understand **why we need it**, instead of memorizing it.
+
+### Think about the problem
+
+Suppose:
+
+```text
+[2, 0, 2, 1, 1, 0]
+```
+
+We know there are only **three types of numbers**:
+
+```text
+0 → should go LEFT
+1 → should stay in MIDDLE
+2 → should go RIGHT
+```
+
+So instead of comparing every number with every other number like normal sorting, we can divide the array into **three regions**.
+
+```text
+0s | 1s | unknown | 2s
+```
+
+We use:
+
+```text
+low    → boundary of 0s
+mid    → number we are currently checking
+high   → boundary of 2s
+```
+
+### Why is this useful?
+
+Imagine:
+
+```text
+[0, 0, ?, ?, ?, 2, 2]
+       ↑       ↑
+      mid     high
+```
+
+We already know:
+
+* Everything before `low` is correctly `0`
+* Everything after `high` is correctly `2`
+* Only the middle part is unknown
+
+Every time we inspect one element, we make the unknown area smaller.
+
+---
+
+### Example
+
+```text
+[2, 0, 1, 2, 1, 0]
+ ↑              ↑
+mid            high
+```
+
+`mid` sees `2`.
+
+We know:
+
+> "2 belongs at the right."
+
+So swap it with `high`.
+
+```text
+[0, 0, 1, 2, 1, 2]
+ ↑        ↑     ↑
+low      mid   high
+```
+
+Now that `2` is permanently in the right region.
+
+Then we continue.
+
+---
+
+### Why not just use `.sort()`?
+
+We can:
+
+```python
+arr.sort()
+```
+
+But that's a general-purpose sorting operation.
+
+The Dutch National Flag algorithm takes advantage of a **special property of this problem**:
+
+```text
+There are ONLY 0, 1 and 2.
+```
+
+Therefore we can achieve:
+
+```text
+Normal sorting       → O(n log n)
+Dutch National Flag  → O(n)
+```
+
+and:
+
+```text
+Extra space → O(1)
+```
+
+### The real idea to remember
+
+Don't memorize:
+
+> "Dutch National Flag = three pointers."
+
+Instead remember:
+
+> **"0 goes left, 2 goes right, and 1 is already where it should be."**
+
+Then the three pointers naturally make sense:
+
+```text
+0s | 1s | UNKNOWN | 2s
+ ↑      ↑         ↑
+low    mid       high
+```
+
+That's **why** we use Dutch National Flag here. It isn't a random trick — we're exploiting the fact that there are only **three possible values**.
