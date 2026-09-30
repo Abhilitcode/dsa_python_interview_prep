@@ -7,7 +7,7 @@ def buy_n_sell(stocks):
     max_profit = 0
 
     for i in range(1,len(stocks)):
-        #todays profit
+        #todays profit will be calculated for each current selling price
         profit = stocks[i] - minimum_prcie
 
         max_profit = max(max_profit,profit)
@@ -20,11 +20,6 @@ def buy_n_sell(stocks):
 stocks = list(map(int,input("enter an array: ").split())) 
 obj = buy_n_sell(stocks)
 print(obj)
-
-
-
-
-
 
 
 #Appraoch 1 : O(n^2)
